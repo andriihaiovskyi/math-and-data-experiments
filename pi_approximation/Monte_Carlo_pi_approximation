@@ -1,0 +1,9 @@
+import numpy as np
+
+def approximate_pi(n: int) -> float:
+    in_counter = 0
+    points_x = np.random.uniform(0,1,n)
+    points_y = np.random.uniform(0, 1, n)
+    distances = np.sqrt((points_x[:]-1/2)**2 + (points_y[:]-1/2)**2)
+    in_counter = np.sum(distances<=1/2)
+    return 4*in_counter/n
